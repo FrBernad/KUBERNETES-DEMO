@@ -1,0 +1,26 @@
+#start docker desktop
+
+#check k8-* images are loaded
+minikube image list
+
+#delete previous config
+kubectl delete -f backend/backend.yaml
+kubectl delete -f frontend/frontend.yaml
+
+#start new config
+kubectl apply -f backend/backend.yaml
+kubectl apply -f frontend/frontend.yaml
+
+#forward frontend service
+minikube service frontend --url
+
+#forward backend service
+kubectl port-forward service/backend 9090:80
+
+#usefull commands
+kubectl get pods
+kubectl get replicasets
+kubectl get deployments
+kubectl get services
+
+kubectl run --rm -it  test --image=nginx:alpine -- sh

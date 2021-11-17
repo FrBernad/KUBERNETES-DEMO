@@ -1,0 +1,9 @@
+.bg{
+    background: rgb(8,44,101);
+    background: linear-gradient(93deg, rgba(8,44,101,1) 18%, rgba(135,82,185,0.7791491596638656) 100%);
+}
+
+.containerBg{
+    background-color: #082c65;
+    border-radius: 15%;
+}
